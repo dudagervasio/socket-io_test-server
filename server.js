@@ -17,7 +17,7 @@ const credentials = {
 	cert: certificate,
 };
 
-const httpsServer = https.createServer(credentials, app);
+const httpsServer = https.createServer(credentials, webApp);
 
 const cors = require('cors');
 
