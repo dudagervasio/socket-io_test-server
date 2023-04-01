@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const PORT = 3303;
 const fs = require('fs');
-
+const https = require('https');
 const express = require('express');
 
 const webApp = express();
@@ -23,7 +23,7 @@ const cors = require('cors');
 
 const jwt = require('jsonwebtoken');
 
-const io = require('socket.io')( http, {
+const io = require('socket.io')( httpsServer, {
 	cors: {
 		origin: '*',
 	},
