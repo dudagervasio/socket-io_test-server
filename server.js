@@ -6,7 +6,16 @@ const express = require('express');
 
 const webApp = express();
 
-const http = require('http').Server( webApp );
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/dgweb.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/dgweb.com/fullchain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+};
+
+const httpsServer = https.createServer(credentials, app);
 
 const cors = require('cors');
 
@@ -22,7 +31,7 @@ const io = require('socket.io')( http, {
 
 webApp.use( cors() );
 
-http.listen(PORT, function(){
+httpsServer.listen(PORT, function(){
 
 	console.log('listening on *:' + PORT);
 });
