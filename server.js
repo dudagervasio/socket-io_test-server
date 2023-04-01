@@ -29,7 +29,7 @@ http.listen(PORT, function(){
 
 io.use(function(socket, next){
 
-	console.log('Middleware');
+	console.log('Middleware Updated');
 
 	if (socket.handshake.auth && socket.handshake.auth.token){
 
