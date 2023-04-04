@@ -7,8 +7,12 @@ const fs = require('fs');
 const https = require('https');
 const http = require('http');
 const express = require('express');
+const cors = require('cors');
+
 
 const webApp = express();
+
+webApp.use( cors() );
 
 console.log('NODE_ENV', process.env.NODE_ENV);
 
@@ -33,9 +37,7 @@ const server = process.env.NODE_ENV === 'development'
 				? http.createServer(webApp)
 				: https.createServer(credentials, webApp);
 
-const cors = require('cors');
 
-webApp.use( cors() );
 
 const jwt = require('jsonwebtoken');
 
