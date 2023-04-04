@@ -1,14 +1,15 @@
 require('dotenv').config();
 
-const { faker } = require('@faker-js/faker');
 
-const PORT = 3303;
 const fs = require('fs');
 const https = require('https');
 const http = require('http');
 const express = require('express');
 const cors = require('cors');
 
+const { faker } = require('@faker-js/faker');
+
+const PORT = 3303;
 
 const webApp = express();
 
@@ -88,7 +89,7 @@ io.use(function(socket, next){
   
  io.on('connect', (socket)=> {
 
-	console.log(`Socket Connected: ${socket.id}`)
+	console.log(`Socket Connected: ${socket.id}`);
 
 	socket.dg = {};
 
