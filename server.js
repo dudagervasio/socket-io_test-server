@@ -10,16 +10,22 @@ const express = require('express');
 
 const webApp = express();
 
+console.log('NODE_ENV', process.env.NODE_ENV);
+
+const credentials = {
+	key: null,
+	cert: null,
+};
+
+
 if(process.env.NODE_ENV !== 'development' ){
 
 	// Certificate
 	const privateKey = fs.readFileSync('/etc/letsencrypt/live/dgweb.com/privkey.pem', 'utf8');
 	const certificate = fs.readFileSync('/etc/letsencrypt/live/dgweb.com/fullchain.pem', 'utf8');
 
-	const credentials = {
-		key: privateKey,
-		cert: certificate,
-	};
+	credentials.key = privateKey;
+	credentials.cert = certificate;
 
 }
 
