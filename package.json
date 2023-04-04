@@ -1,7 +1,7 @@
 {
   "name": "dgwhats-socket-test-server",
   "version": "1.0.0",
-  "main": "server.js",  
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
@@ -10,11 +10,13 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
-    "socket.io": "^4.6.1"
+    "socket.io": "^4.6.1",
+    "@faker-js/faker": "^7.6.0"
   },
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+  }
 }
