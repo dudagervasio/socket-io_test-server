@@ -35,6 +35,8 @@ const server = process.env.NODE_ENV === 'development'
 
 const cors = require('cors');
 
+webApp.use( cors() );
+
 const jwt = require('jsonwebtoken');
 
 const io = require('socket.io')( server, {
@@ -45,7 +47,6 @@ const io = require('socket.io')( server, {
 	maxHttpBufferSize: 1e7
 });;
 
-webApp.use( cors() );
 
 server.listen(PORT, function(){
 
