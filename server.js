@@ -26,8 +26,8 @@ const credentials = {
 if(process.env.NODE_ENV !== 'development' ){
 
 	// Certificate
-	const privateKey = fs.readFileSync('/etc/letsencrypt/live/dgweb.com/privkey.pem', 'utf8');
-	const certificate = fs.readFileSync('/etc/letsencrypt/live/dgweb.com/fullchain.pem', 'utf8');
+	const privateKey = fs.readFileSync('/etc/letsencrypt/live/dgchat.com/privkey.pem', 'utf8');
+	const certificate = fs.readFileSync('/etc/letsencrypt/live/dgchat.com/fullchain.pem', 'utf8');
 
 	credentials.key = privateKey;
 	credentials.cert = certificate;
